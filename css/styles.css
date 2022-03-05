@@ -49,14 +49,14 @@ body {
 
 #footer {
     background-color: rgba(2, 3, 32, 0.575);
-    height: 15vh;
-    font-size: 1.5vh;
+    height: 10em;
+    font-size: 1em;
     margin-top: auto;
     /* text-align: center; */
 }
 
 .footer-text {
     position: relative;
-    top: 7vh;
+    top: 5em;
     margin-left: 20%;
 }
