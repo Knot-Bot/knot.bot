@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Ensure that directory listings are disabled
+Options -Indexes
+
+# Prevent mod_dir appending a slash to physical directories
+DirectorySlash Off
+
+# Redirect to remove the ".html" extension
+RewriteCond %{THE_REQUEST} /([^.?]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=307]
+
+# Rewrite request to append ".html" extension if it exists
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule (.*) $1.html [L]
+
+# Redirect to remove the ".php" extension
+RewriteCond %{THE_REQUEST} /([^.?]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=307]
+
+# Rewrite request to append ".php" extension if it exists
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule (.*) $1.php [L]
