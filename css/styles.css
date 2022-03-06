@@ -48,7 +48,7 @@ body {
 /*footer*/
 
 #footer {
-    background-color: rgba(2, 3, 32, 0.575);
+    background-color: #010114;
     height: 10em;
     font-size: 1em;
     margin-top: auto;
@@ -59,4 +59,8 @@ body {
     position: relative;
     top: 5em;
     margin-left: 20%;
+}
+
+a {
+    color: white;
 }
