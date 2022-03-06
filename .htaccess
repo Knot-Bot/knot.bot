@@ -21,3 +21,7 @@ RewriteRule ^ /%1 [NC,L,R=307]
 # Rewrite request to append ".php" extension if it exists
 RewriteCond %{DOCUMENT_ROOT}/$1.php -f
 RewriteRule (.*) $1.php [L]
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.example\.com [NC]
+RewriteRule ^(.*)$ https://knot.bot/$1 [L,R=301]
